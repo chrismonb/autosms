@@ -21,7 +21,7 @@ detect_distro() {
 }
 
 pause() {
-    read -n1 -r -p "Press any key to continue..." key
+    read -n1 -r -p "Press enter key to continue..." key
 }
 banner() {
     clear
@@ -29,20 +29,14 @@ banner() {
     if ! [ -x "$(command -v figlet)" ]; then
         echo 'Introducing TBomb'
     else
-        figlet TBomb
+        figlet autosms
     fi
     if ! [ -x "$(command -v toilet)" ]; then
-        echo -e "\e[4;34m This Bomber Was Created By \e[1;32mSpeedX \e[0m"
+        echo -e "\ This Created By \chris \e[0m"
     else
-        echo -e "\e[1;34mCreated By \e[1;34m"
-        toilet -f mono12 -F border SpeedX
+        echo -e "mCreated By chris"
+        toilet -f mono12 -F border bulbul
     fi
-    echo -e "\e[1;34m For Any Queries Join Me!!!\e[0m"
-    echo -e "\e[1;32m           Telegram: https://t.me/TBombChat \e[0m"
-    echo -e "\e[4;32m   YouTube: https://www.youtube.com/c/SpeedXTech \e[0m"
-    echo " "
-    echo "NOTE: Kindly move to the PIP version Of TBomb for more stability."
-    echo " "
 }
 
 init_environ(){
@@ -82,7 +76,7 @@ install_deps(){
     else
         echo "We could not install dependencies."
         echo "Please make sure you have git, python3, pip3 and requirements installed."
-        echo "Then you can execute bomber.py ."
+        echo "Then you can execute ."
         exit
     fi
 }
@@ -98,7 +92,7 @@ else
     echo .
     echo .
     install_deps
-    echo This Script Was Made By SpeedX > .update
+    echo This Script Was Made By chris > .update
     echo 'Requirements Installed....'
     pause
 fi
@@ -107,27 +101,26 @@ do
     banner
     echo -e "\e[4;31m Please Read Instruction Carefully !!! \e[0m"
     echo " "
-    echo "Press 1 To  Start SMS  Bomber "
-    echo "Press 2 To  Start CALL Bomber "
-    echo "Press 3 To  Start MAIL Bomber (Not Yet Available)"
-    echo "Press 4 To  Update (Works On Linux And Linux Emulators) "
+    echo "Press 1 To  Start SMS  "
+    echo "Press 2 To  Start CALL "
+    echo "Press 3 To  working)"
     echo "Press 5 To  Exit "
     read ch
     clear
     if [ $ch -eq 1 ];then
-        $PYTHON bomber.py --sms
+        $PYTHON sms.py --sms
         exit
     elif [ $ch -eq 2 ];then
-        $PYTHON bomber.py --call
+        $PYTHON sms.py --call
         exit
     elif [ $ch -eq 3 ];then
-        $PYTHON bomber.py --mail
+        $PYTHON sms.py --mail
         exit
     elif [ $ch -eq 4 ];then
         echo -e "\e[1;34m Downloading Latest Files..."
         rm -f .update
-        $PYTHON bomber.py --update
-        echo -e "\e[1;34m RUN TBomb Again..."
+        $PYTHON sms.py --update
+        echo -e "\e[1;34m RUN  Again..."
         pause
         exit
     elif [ $ch -eq 5 ];then
